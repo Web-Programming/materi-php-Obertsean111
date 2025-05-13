@@ -1,27 +1,19 @@
 <?php
 
-use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function (){
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Home', function(){
-    return view('Beranda',
+Route::get('/beranda', function () {
+    return view('beranda', 
     [
-            'name' => 'Obert Sean',
-            'email' => 'Obert.sean13@gmail.com',
-            'alamat' => 'Palembang'
-
-        ]
-    );
-
+        'name' => 'Angel',
+        'email' => 'angelstvny10@gmail.com',
+        'alamat' => 'Palembang']);
 });
 
-Route::get('/berita/{id}/{judul?}',function($id,$judul=null){
-    return view('berita', ['id'=>$id, 'judul'=>$judul]);
+Route::get('/berita/', function ($id, $judul = null) {
+    return view('berita', ['id' => $id, 'judul' => $judul]);
 });
-
-Route::get('/prodi/index', [ProdiController::class,
-'index']);

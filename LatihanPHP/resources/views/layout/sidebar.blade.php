@@ -1,3 +1,3 @@
 <div>
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
+    <!-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius -->
 </div>
