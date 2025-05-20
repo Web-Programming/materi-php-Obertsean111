@@ -74,6 +74,7 @@
                               <a href="{{ url('prodi/'.$prodi->id.'/edit') }}" >Edit</a>
                               <form action="{{ url('prodi/'.$prodi->id) }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-link">Delete</button>
                               </form>

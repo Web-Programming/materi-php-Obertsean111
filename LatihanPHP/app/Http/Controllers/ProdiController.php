@@ -68,9 +68,21 @@ class ProdiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $post)
     {
-        //
+         $validdateData = $request->validate([
+            'nama' => 'required|min:5|max:20',
+            'kode_prodi' => 'required|min:2|max:2',
+        ]
+    );
+
+    $prodi = new Prodi();
+    $prodi -> nama = $validdateData['nama'];
+    $prodi -> kode_prodi = $validdateData['kode_prodi'];
+    $prodi -> save();
+    
+    return redirect("prodi")->with("status",
+    "Data Program Studi berhasil disimpan");
     }
 
     /**
@@ -78,6 +90,9 @@ class ProdiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $prodi = Prodi::find($id);
+        $prodi->delete();
+
+        return redirect("prodi")->with("status","Data Program Studi Berhasil Dihapus");
     }
 }
